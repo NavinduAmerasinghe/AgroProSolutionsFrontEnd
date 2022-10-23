@@ -44,7 +44,9 @@ function OrderConfirmationForm() {
     e.preventDefault();
 
     try {
-      const result = axios.delete(`http://localhost:8000/cartItem/`);
+      const result = axios.delete(
+        `https://agroprosolutionbackend.herokuapp.com/cartItem/`
+      );
 
       console.log(result);
     } catch (err) {
@@ -52,7 +54,9 @@ function OrderConfirmationForm() {
     }
 
     try {
-      const result = axios.delete(`http://localhost:8000/payment/`);
+      const result = axios.delete(
+        `https://agroprosolutionbackend.herokuapp.com/payment/`
+      );
 
       console.log(result);
     } catch (err) {
@@ -97,7 +101,7 @@ function OrderConfirmationForm() {
 
   const [cartItems, setCartItems] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8000/cartItem/")
+    fetch("https://agroprosolutionbackend.herokuapp.com/cartItem/")
       .then((res) => res.json())
       .then((res) => {
         setCartItems(res.data);
@@ -113,7 +117,7 @@ function OrderConfirmationForm() {
   const totalPrice = subtotalPrice + shippingPrice;
 
   useEffect(() => {
-    fetch("http://localhost:8000/payment/")
+    fetch("https://agroprosolutionbackend.herokuapp.com/payment/")
       .then((res) => res.json())
       .then((data) => {
         setPaymentDetails(data);

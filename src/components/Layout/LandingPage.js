@@ -3,7 +3,7 @@ import "./landingPage.css";
 export default function LandingPage() {
   const [rateDetails, setRateDetails] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8000/rate/")
+    fetch("https://agroprosolutionbackend.herokuapp.com/rate/")
       .then((res) => res.json())
       .then((data) => {
         setRateDetails(data);

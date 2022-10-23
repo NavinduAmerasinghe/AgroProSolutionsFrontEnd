@@ -43,7 +43,7 @@ const Home = () => {
   const [view, viewState] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:8000/product/")
+    fetch("https://agroprosolutionbackend.herokuapp.com/product/")
       .then((res) => res.json())
       .then((data) => {
         setproduct(data);
@@ -52,7 +52,7 @@ const Home = () => {
   }, []);
   useEffect(() => {
     axios
-      .get("http://localhost:8000/advertise/view")
+      .get("https://agroprosolutionbackend.herokuapp.com/advertise/view")
       .then((res) => {
         setAdvertisement(res.data);
         console.log("THIS IS THE DATA :" + res.data);

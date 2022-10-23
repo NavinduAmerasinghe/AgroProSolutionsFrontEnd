@@ -29,7 +29,7 @@ export default function Header({ countCartItems }) {
   };
   const [cartItems, setCartItems] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8000/cartItem/")
+    fetch("https://agroprosolutionbackend.herokuapp.com/cartItem/")
       .then((res) => res.json())
       .then((res) => {
         setCartItems(res.data);

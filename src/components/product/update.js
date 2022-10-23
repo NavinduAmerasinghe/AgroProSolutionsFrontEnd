@@ -22,7 +22,7 @@ const ProductUpdate = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:8000/product/${id}`)
+    fetch(`https://agroprosolutionbackend.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((res) => {
         setUpdate(res.data);
@@ -41,10 +41,13 @@ const ProductUpdate = () => {
       formData.append("price", product.price);
       formData.append("image", product.image);
 
-      const res = await fetch(`http://localhost:8000/product/${id}`, {
-        method: "PUT",
-        body: formData,
-      });
+      const res = await fetch(
+        `https://agroprosolutionbackend.herokuapp.com/product/${id}`,
+        {
+          method: "PUT",
+          body: formData,
+        }
+      );
       if (res.ok) {
         alert("Details Updated Successfully");
         window.location.reload();

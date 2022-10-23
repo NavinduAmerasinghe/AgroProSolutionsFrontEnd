@@ -20,7 +20,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "http://localhost:8000/users/login",
+      "https://agroprosolutionbackend.herokuapp.com/users/login",
       {
         email,
         password,
@@ -64,7 +64,7 @@ export const register =
       };
 
       const { data } = await axios.post(
-        "http://localhost:8000/users/",
+        "https://agroprosolutionbackend.herokuapp.com/users/",
         {
           name,
           pic,
@@ -106,7 +106,7 @@ export const updateProfile = (user) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.post(
-      "http://localhost:8000/users/profile",
+      "https://agroprosolutionbackend.herokuapp.com/users/profile",
       user,
       config
     );

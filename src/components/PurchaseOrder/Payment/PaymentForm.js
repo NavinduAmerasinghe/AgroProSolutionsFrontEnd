@@ -38,9 +38,11 @@ const PaymentForm = () => {
   }
 
   useEffect(() => {
-    axios.get("http://localhost:8000/payment/").then((res) => {
-      setPayments(res.data);
-    });
+    axios
+      .get("https://agroprosolutionbackend.herokuapp.com/payment/")
+      .then((res) => {
+        setPayments(res.data);
+      });
   }, []);
 
   const saveData = (e) => {
@@ -69,12 +71,14 @@ const PaymentForm = () => {
     };
 
     axios
-      .post("http://localhost:8000/payment/", paymentObj)
+      .post("https://agroprosolutionbackend.herokuapp.com/payment/", paymentObj)
       .then((res) => {
         alert("Payment Details Successfully added!");
-        axios.get("http://localhost:8000/payment/").then((res) => {
-          setPayments(res.data);
-        });
+        axios
+          .get("https://agroprosolutionbackend.herokuapp.com/payment/")
+          .then((res) => {
+            setPayments(res.data);
+          });
         setEmail("");
         setCardInformation("");
         setExpDate("");
@@ -98,12 +102,17 @@ const PaymentForm = () => {
       zip: editZip,
     };
     axios
-      .put(`http://localhost:8000/payment/${editId}`, paymentObj)
+      .put(
+        `https://agroprosolutionbackend.herokuapp.com/payment/${editId}`,
+        paymentObj
+      )
       .then((res) => {
         alert("Payment Updated");
-        axios.get("http://localhost:8000/payment/").then((res) => {
-          setPayments(res.data);
-        });
+        axios
+          .get("https://agroprosolutionbackend.herokuapp.com/payment/")
+          .then((res) => {
+            setPayments(res.data);
+          });
         setIsEditClick(false);
       })
       .catch((err) => {
@@ -114,12 +123,16 @@ const PaymentForm = () => {
   const deleteCourse = (e) => {
     e.preventDefault();
     axios
-      .delete(`http://localhost:8000/payment/deletePayment/${e.target.id}`)
+      .delete(
+        `https://agroprosolutionbackend.herokuapp.com/payment/deletePayment/${e.target.id}`
+      )
       .then(() => alert("Payment Deleted successfully"))
       .then(() => {
-        axios.get("http://localhost:8000/payment/").then((res) => {
-          setPayments(res.data);
-        });
+        axios
+          .get("https://agroprosolutionbackend.herokuapp.com/payment/")
+          .then((res) => {
+            setPayments(res.data);
+          });
       })
       .catch((err) => {
         alert(err.message);

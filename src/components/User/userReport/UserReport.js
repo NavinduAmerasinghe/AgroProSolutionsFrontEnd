@@ -11,7 +11,7 @@ const UserReport = () => {
   const [user, setUser] = useState([]);
   const [search, setSearch] = useState("");
   useEffect(() => {
-    fetch("http://localhost:8000/users/")
+    fetch("https://agroprosolutionbackend.herokuapp.com/users/")
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
@@ -29,7 +29,9 @@ const UserReport = () => {
       onOk: async function () {
         try {
           const result = await (
-            await axios.delete(`http://localhost:8000/users/${id}`)
+            await axios.delete(
+              `https://agroprosolutionbackend.herokuapp.com/users/${id}`
+            )
           ).status;
           console.log(result);
 

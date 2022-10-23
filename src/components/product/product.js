@@ -55,10 +55,13 @@ const Product = () => {
       formData.append("price", product.price);
       formData.append("image", product.image);
 
-      const res = await fetch("http://localhost:8000/product/", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        "https://agroprosolutionbackend.herokuapp.com/product/",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
       if (res.ok) {
         alert("Details Added Successfully");
         window.location.reload();

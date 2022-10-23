@@ -24,7 +24,7 @@ export default function Cart() {
   const [itemName, setitemName] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8000/cartItem/")
+    fetch("https://agroprosolutionbackend.herokuapp.com/cartItem/")
       .then((res) => res.json())
       .then((res) => {
         setCartItems(res.data);
@@ -33,7 +33,7 @@ export default function Cart() {
   console.log(cartItems);
 
   useEffect(() => {
-    fetch("http://localhost:8000/payment/")
+    fetch("https://agroprosolutionbackend.herokuapp.com/payment/")
       .then((res) => res.json())
       .then((data) => {
         setPaymentDetails(data);
@@ -69,7 +69,9 @@ export default function Cart() {
         e.preventDefault();
         try {
           const result = await (
-            await axios.delete(`http://localhost:8000/cartItem/${id}`)
+            await axios.delete(
+              `https://agroprosolutionbackend.herokuapp.com/cartItem/${id}`
+            )
           ).status;
           console.log(result);
 

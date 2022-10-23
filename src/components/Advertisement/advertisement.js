@@ -27,7 +27,10 @@ const Advertisement = () => {
     formData.append("email", email);
     formData.append("photo", photo);
     axios
-      .post("http://localhost:8000/advertise/add", formData)
+      .post(
+        "https://agroprosolutionbackend.herokuapp.com/advertise/add",
+        formData
+      )
       .then((response) => {
         const result = response.data;
         const { status, message } = result;

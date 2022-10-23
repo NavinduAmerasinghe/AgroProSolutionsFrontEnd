@@ -18,7 +18,7 @@ const Single = () => {
   const [cartItems, setCartItems] = useState([]);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:8000/product/${id}`)
+    fetch(`https://agroprosolutionbackend.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setproduct(data);
@@ -32,11 +32,14 @@ const Single = () => {
 
     console.log(product);
     axios
-      .post("http://localhost:8000/cartItem/", product.data)
+      .post(
+        "https://agroprosolutionbackend.herokuapp.com/cartItem/",
+        product.data
+      )
       .then((res) => {
         alert("Cart Details Successfully added!");
         window.location = "/cart";
-        // axios.get("http://localhost:8000/cartItem/").then((res) => {
+        // axios.get("https://agroprosolutionbackend.herokuapp.com/cartItem/").then((res) => {
         //   setPayments(res.data);
         // });
         // productCode("");

@@ -82,7 +82,9 @@ const Profile = () => {
       onOk: async function () {
         try {
           const result = await (
-            await axios.delete(`http://localhost:8000/users/${id}`)
+            await axios.delete(
+              `https://agroprosolutionbackend.herokuapp.com/users/${id}`
+            )
           ).status;
           console.log(result);
 

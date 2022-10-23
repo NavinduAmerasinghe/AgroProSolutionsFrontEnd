@@ -38,7 +38,7 @@ function ViewAdvertisement(props) {
   // const history = useHistory();
   useEffect(() => {
     axios
-      .get("http://localhost:8000/advertise/view")
+      .get("https://agroprosolutionbackend.herokuapp.com/advertise/view")
       .then((res) => {
         setAdvertisement(res.data);
         console.log("THIS IS THE DATA :" + res.data);
@@ -55,7 +55,9 @@ function ViewAdvertisement(props) {
 
   const removeAdvertisement = (id) => {
     axios
-      .get(`http://localhost:8000/advertise/delete/${id}`)
+      .get(
+        `https://agroprosolutionbackend.herokuapp.com/advertise/delete/${id}`
+      )
       .then((res) => {
         window.location = "/advertisement/view";
         alert("Product Deleted Successfuly");
@@ -105,7 +107,9 @@ function ViewAdvertisement(props) {
 
   const UpdateAdvertisement = (id) => {
     axios
-      .get(`http://localhost:8000/advertise/update/${id}`)
+      .get(
+        `https://agroprosolutionbackend.herokuapp.com/advertise/update/${id}`
+      )
       .then((res) => {
         window.location = "/advertisement/view";
         alert("Advertisement Updated");
@@ -186,7 +190,7 @@ function ViewAdvertisement(props) {
                             component="img"
                             height="190"
                             image=""
-                            src={`http://localhost:3000/${adver.photo}`}
+                            src={`https://agroprosolutionbackend.herokuapp.com/${adver.photo}`}
                             title="Image"
                           />
                           <CardContent>

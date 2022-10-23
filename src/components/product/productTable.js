@@ -16,7 +16,7 @@ const ProductTable = () => {
   //search filter
   const [search, setSearch] = useState("");
   useEffect(() => {
-    fetch("http://localhost:8000/product/")
+    fetch("https://agroprosolutionbackend.herokuapp.com/product/")
       .then((res) => res.json())
       .then((data) => {
         setproduct(data);
@@ -34,7 +34,9 @@ const ProductTable = () => {
       onOk: async function () {
         try {
           const result = await (
-            await axios.delete(`http://localhost:8000/product/${id}`)
+            await axios.delete(
+              `https://agroprosolutionbackend.herokuapp.com/product/${id}`
+            )
           ).status;
           console.log(result);
 

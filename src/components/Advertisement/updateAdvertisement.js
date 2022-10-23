@@ -39,7 +39,7 @@ const UpdateAdvertisement = () => {
     setPhoto(e.target.files[0]);
   };
   useEffect(() => {
-    fetch(`http://localhost:8000/advertise/${id}`)
+    fetch(`https://agroprosolutionbackend.herokuapp.com/advertise/${id}`)
       .then((res) => res.json())
 
       .then((res) => {
@@ -63,11 +63,14 @@ const UpdateAdvertisement = () => {
 
       formData.append("photo", adv.photo);
 
-      const res = await fetch(`http://localhost:8000/advertise/update/${id}`, {
-        method: "PUT",
+      const res = await fetch(
+        `https://agroprosolutionbackend.herokuapp.com/advertise/update/${id}`,
+        {
+          method: "PUT",
 
-        body: formData,
-      });
+          body: formData,
+        }
+      );
 
       if (res.ok) {
         alert("Details Updated Successfully");
@@ -87,7 +90,7 @@ const UpdateAdvertisement = () => {
   //   formData.append("email", email);
   //   formData.append("photo", photo);
 
-  //       axios.post(`http://localhost:8000/advertise/update/${id}`, formData).then(response => {
+  //       axios.post(`https://agroprosolutionbackend.herokuapp.com/advertise/update/${id}`, formData).then(response => {
   //             const result = response.data;
   //             const { status, message } = result;
   //             if (status !== 'SUCCESS') {

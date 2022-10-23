@@ -40,7 +40,9 @@ export default function PO() {
     e.preventDefault();
 
     try {
-      const result = axios.delete(`http://localhost:8000/cartItem/`);
+      const result = axios.delete(
+        `https://agroprosolutionbackend.herokuapp.com/cartItem/`
+      );
 
       console.log(result);
     } catch (err) {
@@ -48,7 +50,9 @@ export default function PO() {
     }
 
     try {
-      const result = axios.delete(`http://localhost:8000/payment/`);
+      const result = axios.delete(
+        `https://agroprosolutionbackend.herokuapp.com/payment/`
+      );
 
       console.log(result);
     } catch (err) {
