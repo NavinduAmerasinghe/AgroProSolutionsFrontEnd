@@ -190,7 +190,7 @@ function ViewAdvertisement(props) {
                             component="img"
                             height="190"
                             image=""
-                            src={`https://agroprosolutionbackend.herokuapp.com/${adver.photo}`}
+                            src={`http://localhost:3000/${adver.photo}`}
                             title="Image"
                           />
                           <CardContent>

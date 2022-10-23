@@ -44,7 +44,7 @@ function SideBar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Quick Menu</h3>
           <ul className="sidebarList">
-            <Link to="/" className="link">
+            <Link to="/advertisement/view" className="link">
               <li className="sidebarListItem">
                 <AttachMoney className="sidebarIcon" />
                 Advertisements
